@@ -1,0 +1,12 @@
+.contenedor{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+
+    .contenido{
+        width: 60%;
+        height: auto;
+        //border: 1px solid red;
+    }
+}

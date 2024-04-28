@@ -1,0 +1,52 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>TrocaderoApp</ion-title>
+    <ion-avatar slot="end" style="margin-right: 12px; display: flex; align-items: center;">
+      <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 42px; height: 42px;">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="8">
+        <h1>Productos del Vendedor</h1>
+  <p style="margin-top: -15px; color: #3c096c;">{{productosDelVendedor}}</p>
+  <br><br>
+
+        <ion-list lines="none">
+          <ion-item *ngFor="let producto of productos">
+
+          <ion-label slot="start">
+            <h2 style="font-size: 26px; font-weight: 300;">{{producto.nombre}}</h2>
+            <p style="font-size: 22px; font-weight: 300;">{{producto.descripcionCorta}}</p>
+            <p style="font-size: 16px; font-weight: 200;">{{producto.categoria}}</p>
+            <p style="font-size: 22px; font-weight: 300;">Precio: {{producto.precio}}<span style="margin-left: 32px;">Cantidad Disponible: {{producto.cantidadDisponible}}</span></p>
+          </ion-label> 
+
+          <ion-thumbnail slot="end">
+            <img alt="" src="{{producto.imagenes[0]}}" />
+          </ion-thumbnail>
+
+          </ion-item>
+        </ion-list>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-card>
+          <ion-card-header>
+            BALANCE GENERAL
+          </ion-card-header>
+          <ion-card-content>
+            <h1>Productos Registrados: <strong>{{productosRegistrados}}</strong></h1>
+            <h1>Total Ventas: <strong></strong></h1>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+</ion-content>

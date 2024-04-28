@@ -1,0 +1,151 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>TrocaderoApp</ion-title>
+    <ion-avatar slot="end" style="margin-right: 12px; display: flex; align-items: center;">
+      <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 42px; height: 42px;">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="main-content">
+    <div class="side-left">
+        <ion-list>
+          <ion-item lines="none" routerLink="/dashboard">
+            <i class='bx bxs-dashboard texto-violeta' ></i> 
+            <p style="font-size: 18px; font-weight: 300; margin-left: 16px;">
+              Dashboard
+            </p>
+          </ion-item>
+          <ion-item lines="none" routerLink="/usuarios">
+            <i class='bx bxs-user-detail texto-violeta' ></i> 
+            <p style="font-size: 18px; font-weight: 300; margin-left: 16px;">
+              Usuarios
+            </p>
+          </ion-item>
+          <ion-item lines="none" routerLink="/productos">
+            <i class='bx bx-store texto-violeta' ></i> 
+            <p style="font-size: 18px; font-weight: 300; margin-left: 16px;">
+              Productos
+            </p>
+          </ion-item>
+          <ion-item lines="none" routerLink="/balance">
+            <i class='bx bx-id-card'></i>
+            <p style="font-size: 18px; font-weight: 300; margin-left: 16px;">
+              Membresias
+            </p>
+          </ion-item>
+          <!--ion-item lines="none" routerLink="/mapa">
+            <i class='bx bx-map-alt texto-violeta' ></i> 
+            <p style="font-size: 18px; font-weight: 300; margin-left: 16px;">
+              Mapa
+            </p>
+          </ion-item-->
+          <ion-item lines="none" routerLink="/mensajes">
+            <i class='bx bx-message-rounded-dots texto-violeta' ></i> 
+            <p style="font-size: 18px; font-weight: 300; margin-left: 16px;">
+              Chat
+            </p>
+          </ion-item>
+        </ion-list>
+    </div>
+    <div class="side-right">
+      <h1 class="header-page texto-negro-50">Usuarios</h1>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="6">
+            <ion-list lines="none">
+              
+              <ion-item lines="none" *ngFor="let usuarios of clientesRegistrados">
+                <ion-thumbnail slot="start">
+                  <img  src="../../assets/icon/trocaderologo.jpg" alt="">
+                </ion-thumbnail>
+                <ion-label>
+                  <h1>{{usuarios.nombres}} {{usuarios.apellidos}}</h1>
+                  <p>{{usuarios.email}}</p>
+                </ion-label>
+                <ion-chip slot="end" 
+                  (click)="SeleccionarCliente(
+                    usuarios.uid, 
+                    usuarios.nombres, 
+                    usuarios.apellidos, 
+                    usuarios.email,
+                    usuarios.telefono, 
+                    usuarios.direccion
+                    )">ver</ion-chip>
+              </ion-item>
+
+            </ion-list>
+          </ion-col>
+
+          <ion-col size="2"></ion-col>
+
+          <ion-col size="4">
+            <h1 class="header-page texto-negro-50">Informacion Personal</h1>
+            <ion-list lines="none">
+              <!--UID-->
+              <ion-input
+                label="UID"
+                labelPlacement="stacked"
+                type="text"
+                [(ngModel)]="detalleCliente.uis"
+              >
+              </ion-input>
+
+              <!--NOMBRES-->
+              <ion-input
+                label="NOMBRES"
+                labelPlacement="stacked"
+                type="text"
+                [(ngModel)]="detalleCliente.nombres"
+              >
+              </ion-input>
+
+              <!--APELLIDOS-->
+              <ion-input
+                label="APELLIDOS"
+                labelPlacement="stacked"
+                type="text"
+                [(ngModel)]="detalleCliente.apellidos"
+              >
+              </ion-input>
+              <!--EMAIL-->
+              <ion-input
+                label="EMAIL"
+                labelPlacement="stacked"
+                type="text"
+                [(ngModel)]="detalleCliente.email"
+              >
+              </ion-input>
+
+              <!--TELEFONO-->
+              <ion-input
+                label="TELEFONO"
+                labelPlacement="stacked"
+                type="text"
+                [(ngModel)]="detalleCliente.telefono"
+              >
+              </ion-input>
+              <!--DIRECCION-->
+              <ion-input
+                label="DIRECCION"
+                labelPlacement="stacked"
+                type="text"
+                [(ngModel)]="detalleCliente.direccion"
+              >
+              </ion-input>
+
+           
+              <ion-button [routerLink]="['/mostrarproductos',detalleCliente.uis]" expand="block" color="tertiary" mode="ios">Ver Productos</ion-button>
+              
+            </ion-list>
+            
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      
+    </div>
+  </div>
+
+</ion-content>

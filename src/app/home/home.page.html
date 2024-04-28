@@ -1,0 +1,49 @@
+<!--ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Inicio
+    </ion-title>
+    <ion-button routerLink="/dashboard" slot="end">Dashboard</ion-button>
+  </ion-toolbar>
+</ion-header-->
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <!--img src="../../assets/pexels-apasaric-1510595.jpg" alt=""-->
+        <h1 class="ion-text-center" style="font-size: 82px; margin-top: 220px; font-weight: 200;">
+          Trocadero<span style="font-weight: 600;">Shop</span>
+        </h1>
+        <p class="ion-text-center" style="font-size: 22px;">Tu mejor aliado para compras en linea.</p>
+      </ion-col>
+      <ion-col size="6">
+        <img src="../../assets/icon/trocaderologo.jpg" alt="" class="imagen-logo">
+        <ion-list lines="none">
+          <ion-input
+            label="Email"
+            labelPlacement="stacked"
+            placeholder="user@email.com"
+            type="text"
+            [(ngModel)]="email"
+            color="dark"
+          >
+
+          </ion-input>
+          <ion-input
+            label="Password"
+            labelPlacement="stacked"
+            placeholder="user@email.com"
+            type="password"
+            [(ngModel)]="password"
+            color="dark"
+          >
+
+          </ion-input>
+          <ion-button expand="block" (click)="iniciarSesion()" mode="ios" color="dark">Iniciar Sesion</ion-button>
+        </ion-list>  
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

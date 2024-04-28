@@ -1,0 +1,29 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>TrocaderoApp</ion-title>
+    <ion-avatar slot="end" style="margin-right: 12px; display: flex; align-items: center;">
+      <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 42px; height: 42px;">
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div class="contenedor">
+    <div class="contenido">
+      <img src="{{imagen}}" alt="" style="object-fit: cover; width: 100%; height: 340px;">
+      <ion-list lines="none">
+        <h1>{{nombre}}</h1> <!--nombre del producto-->
+        <p>{{categoria}}</p>
+        <!--detalle del producto-->
+        <ion-textarea [autoGrow]="true" label="Descripcion" labelPlacement="floating" [(ngModel)]="detalle">
+        </ion-textarea>
+        <!--precio-->
+        <ion-input label="Precio" labelPlacement="floating" [(ngModel)]="precio">
+        </ion-input>
+      </ion-list>
+      <br><br>
+
+
+
+    </div>
+  </div>
+</ion-content>

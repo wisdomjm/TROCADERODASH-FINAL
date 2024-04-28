@@ -1,0 +1,7 @@
+{
+  "name": "trocaderoappDasboard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
